@@ -11,8 +11,8 @@ const FileUploader = ({ fileData }) => {
     const onChange = (event) => {
         setFile(event.target.files[0].name);
 
-        let fileS = event.target.files[0];
-        let parseFile = Papa.parse(fileS, {
+        let fileDetails = event.target.files[0];
+        let parseFile = Papa.parse(fileDetails, {
             header: true,
             dynamicTyping: true,
             complete: function (results) {
@@ -26,27 +26,28 @@ const FileUploader = ({ fileData }) => {
     };
 
     return (
-        <>
-            <div >
-                <div>
-                    <button    
-                        onClick={(event) => handleClick(event)}       
-                    >
-                        createCampaign.upload
-                    </button>
-                </div>
-                <div>
-                   {file}
-                   </div>
-                <input
-                    type="file"
-                    {...register('phoneNumberDestinataries')}
-                    onChange={onChange}
-                    ref={hiddenFileInput}
-                    style={{ display: 'none' }}
-                />
-            </div>
-        </>
+      <>
+        <div>
+          <div>
+            <button
+              className={
+                "bg-blue-merkle text-white uppercase text-sm font-bold tracking-wide mt-2 hover:bg-gray-500  border-gray-700 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
+              }
+              onClick={(event) => handleClick(event)}
+            >
+              Upload cv
+            </button>
+          </div>
+          <div>{file}</div>
+          <input
+            type="file"
+            {...register("file", { required: true })}
+            onChange={onChange}
+            ref={hiddenFileInput}
+            style={{ display: "none" }}
+          />
+        </div>
+      </>
     );
 };
 
