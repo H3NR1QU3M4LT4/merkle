@@ -40,10 +40,10 @@ const FormSendCV = () => {
 
   return (
     <div>
-      <div className="text-black text-4xl font-bold py-8 text-left m-5">
+      <div className="text-black text-4xl font-bold py-8 text-left m-10">
         Contact
       </div>
-      <div className="max-w-screen-md rounded overflow-hidden shadow-lg bg-gray-100 py-3 m-5 mb-10">
+      <div className="max-w-screen-md rounded overflow-hidden shadow-lg bg-gray-100 py-3 m-10 mb-10">
         <div className="container flex flec-col justify-center sm:text-left lg:text-left px-7">
           <div className="item w-4/5">
             <form onSubmit={handleSubmit(onSubmit)}>

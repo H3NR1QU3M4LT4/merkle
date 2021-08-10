@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <header className="bg-blue-merkle py-6">
-      <div className="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:p-3 sm: py-8">
+      <div className="flex flex-wrap items-center justify-between sm: py-4 mx-10">
         <Logo />
         <button
           className="items-center block px-3 py-4 text-white border border-white rounded md:hidden"
