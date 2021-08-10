@@ -1,35 +1,6 @@
-import { useState } from "react";
-
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
-import FileUploader from "../../components/FileUploader";
-
-export interface IFormSendCV {
-  fullName: string;
-  email: string;
-  about: string;
-  file: string;
-}
+import React from "react";
 
 const CvList = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-
-  const [file, setFile] = useState([""]);
-  const getFileData = (fileData) => {
-    setFile(fileData);
-  };
-
-  const onSubmit: SubmitHandler<IFormSendCV> = (data) => {
-    console.log(data);
-    data.file = file.toString();
-  };
-
-  console.log(watch("example"));
-
   return (
     <div>
       <div className="text-black text-4xl font-bold py-8 text-left m-5">

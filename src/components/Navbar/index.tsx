@@ -13,7 +13,7 @@ const Header = () => {
 
   const data = [
     {
-      path: "/application",
+      path: "/",
       title: "Application",
     },
   ];

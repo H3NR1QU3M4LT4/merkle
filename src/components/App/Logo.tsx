@@ -6,6 +6,7 @@ const Logo = () => {
       <div>
         <a href="https://merkleinc.ch/en" className="block w-52 h-auto">
           <svg
+            className="sm:w-52"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 382 84"
