@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useHistory } from "react-router-dom";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import FileUploader from "../../components/FileUploader";
 
@@ -11,6 +11,8 @@ export interface IFormSendCV {
 }
 
 const FormSendCV = () => {
+  const history = useHistory();
+
   const {
     register,
     handleSubmit,
@@ -19,13 +21,19 @@ const FormSendCV = () => {
   } = useForm();
 
   const [file, setFile] = useState([""]);
+
   const getFileData = (fileData) => {
     setFile(fileData);
+  };
+
+  const redirectCvListPage = (e) => {
+    history.push(e);
   };
 
   const onSubmit: SubmitHandler<IFormSendCV> = (data) => {
     console.log(data);
     data.file = file.toString();
+    redirectCvListPage("/cv-list");
   };
 
   console.log(watch("example"));

@@ -1,9 +1,8 @@
 import React from 'react';
-import './App.css';
-import Logo from "./Logo";
+import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import FormSendCV from "../../pages/formSendCV";
-import Home from "../../pages/home";
+import CvList from "../../pages/cvLists";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Layout from "./Layout";
@@ -13,11 +12,11 @@ const App = () => {
     return (
       <>
         <Switch>
-          <Route exact path="/" render={(props) => <Home {...props} />} />
+          <Route exact path="/" render={(props) => <FormSendCV {...props} />} />
           <Route
             exact
-            path={"/application"}
-            render={(props) => <FormSendCV {...props} />}
+            path="/cv-list"
+            render={(props) => <CvList {...props} />}
           />
         </Switch>
       </>
